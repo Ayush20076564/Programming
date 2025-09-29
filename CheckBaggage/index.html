@@ -1,0 +1,20 @@
+<Html>
+    <head>
+        <script>
+            function checkBaggage() {
+                const bagWeight = document.getElementById('weight').value;
+                if (parseInt(bagWeight) > 15) {
+                    alert('Baggage exceed weight limit of 15kg');
+                } else {
+                    alert('Baggage weight acceptable, Good to go');
+                }
+            }
+            
+        </script>
+    </head>
+    <body>
+        <input type="text" id="weight">
+        <!--replace button onclick with call to check function.-->
+        <button onclick="checkBaggage()">Check Baggage Weight</button>
+    </body>
+</Html>
