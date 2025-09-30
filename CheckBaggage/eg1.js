@@ -5,7 +5,7 @@ const allowedWeight = 15;
                 if (currentWeight > allowedWeight) {
                     document.getElementById('removed').style.display = 'block';
                     document.getElementById('remB').style.display = 'block';
-                    alert('Baggage overweight,you have to remove some weight.');
+                    alert('Oh No - Baggage overweight,you have to remove some weight.');
                 } else {
                     document.getElementById('removed').style.display = 'none';
                     document.getElementById('remB').style.display = 'none';
@@ -18,7 +18,7 @@ const allowedWeight = 15;
                 currentWeight -= removeWeight;
                 document.getElementById('weight').value = currentWeight;
                 if (currentWeight > allowedWeight) {
-                    alert('Still overweight! Current weight: ' + currentWeight + 'kg');
+                    alert('It Still overweight! Current weight: ' + currentWeight + 'kg');
                 } else {
                     document.getElementById('removed').style.display = 'none';
                     document.getElementById('remB').style.display = 'none';
