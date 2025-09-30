@@ -1,6 +1,5 @@
 const allowedWeight = 15;
             let currentWeight = 0;
-
             let check = () => {
                 currentWeight = parseInt(document.getElementById('weight').value) || 0;
                 if (currentWeight > allowedWeight) {
