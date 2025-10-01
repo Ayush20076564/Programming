@@ -1,13 +1,30 @@
 <html>
     <head>
     <script src="eg1.js"></script>
+    <script src="eg2.js"></script>
     </head>
     <body>
+        <h1>Exercise 1</h1>
         <input type="text" id="weight" placeholder="Enter baggage weight (kg)">
         <button onclick="check()">Check Baggage</button>
         <p>
             <input type="text" id="removed" style="display:none;" placeholder="Weight to remove (kg)">
             <button id="remB" onclick="remove()" style="display:none;">Remove this much baggage (kg)</button>
         </p>
+
+        <h1>Exercise 2</h1>
+
+    <p><button onclick="euler1()">Press for solution to project Euler</button>
+</p>
+
+<p>
+       <label for="A:">A</label> <input type="text" id="a">
+        <label for="b:">B</label><input type="text" id="b">
+       <label for="n:">N</label> <input type="text" id="n">
+
+</p>
+    <p><button onclick="eulerCustom()">Press for custom sum of multiples</button>
+
+    </body>
     </body>
 </html>
