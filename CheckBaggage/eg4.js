@@ -1,12 +1,19 @@
 
 function resultStr() {
     let strList = document.getElementById('strList').value;
-    let [factorsStr, multiplesStr] = strList.split(':').map(s => s.trim());
-    let factors = factorsStr.split(' ').map(Number);
-    let multiples = multiplesStr.split(' ').map(Number);
-    let sum = multiples.filter(n => factors.some(m => n % m === 0)).reduce((a, b) => a + b, 0);
-    let result = `${sum} : ${factors.join(' ')} : ${multiples.join(' ')}`;
-    alert(result);
+    let result;
+    try {
+        let [factorsStr, multiplesStr] = strList.split(':').map(s => s.trim());
+        let factors = factorsStr.split(' ').map(Number);
+        let multiples = multiplesStr.split(' ').map(Number);
+        let sum = multiples.filter(n => factors.some(m => n % m === 0)).reduce((a, b) => a + b, 0);
+        // If sum is NaN, show 0
+        if (isNaN(sum)) sum = 0;
+        result = `${sum} : ${factors.join(' ')} : ${multiples.join(' ')}`;
+    } catch (e) {
+        result = '0 : Invalid input';
+    }
+    alert('The result of this problem is ' + result);
 }
 
 
