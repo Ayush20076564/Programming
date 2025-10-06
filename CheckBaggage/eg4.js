@@ -1,26 +1,12 @@
 
-function parseNumbers(str) {
-    return str.split(' ').map(Number).filter(n => !isNaN(n));
-}
-
-function showResult(result) {
-    alert('The result of this problem is ' + result);
-}
-
 function resultStr() {
     let strList = document.getElementById('strList').value;
-    let result;
-    try {
-        let [factorsStr, multiplesStr] = strList.split(':').map(s => s.trim());
-        let factors = parseNumbers(factorsStr);
-        let multiples = parseNumbers(multiplesStr);
-        let sum = multiples.filter(n => factors.some(m => m !== 0 && n % m === 0)).reduce((a, b) => a + b, 0);
-        if (isNaN(sum)) sum = 0;
-        result = `${sum} : ${factors.join(' ')} : ${multiples.join(' ')}`;
-    } catch (e) {
-        result = '0 : Invalid input';
-    }
-    showResult(result);
+    let [factorsStr, multiplesStr] = strList.split(':').map(s => s.trim());
+    let factors = factorsStr.split(' ').map(Number);
+    let multiples = multiplesStr.split(' ').map(Number);
+    let sum = multiples.filter(n => factors.some(m => n % m === 0)).reduce((a, b) => a + b, 0);
+    let result = `${sum} : ${factors.join(' ')} : ${multiples.join(' ')}`;
+    alert('The result of this problem is ' +result);
 }
 
 
