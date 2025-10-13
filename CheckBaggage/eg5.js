@@ -10,16 +10,21 @@ function resulsetStr() {
     let factors = factorsStr.split(' ')
       .map(s => parseInt(s, 10))
       .filter(n => !isNaN(n));
+      
     let multiples = multiplesStr.split(' ')
       .map(s => parseInt(s, 10))
       .filter(n => !isNaN(n));
+
+
     if (factors.length === 0 || multiples.length === 0) {
       throw new Error('corrupt');
     }
     let sum = multiples
       .filter(n => factors.some(m => n % m === 0))
       .reduce((a, b) => a + b, 0);
+
     result = `${sum} : ${factorsStr} : ${multiplesStr}`;
+
     alert('The result of this problem is ' + result);
 
   } catch (e) {
