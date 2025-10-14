@@ -21,13 +21,18 @@ class UserCard extends HTMLElement {
     details.classList.add('details');
     details.innerHTML = `
       <p><strong>Email:</strong> ${this.getAttribute('email')}</p>
-      <p><strong>Location:</strong> ${this.getAttribute('location')}</p>`;
+      <p><strong>Location:</strong> ${this.getAttribute('location')}</p>
+    `;
     details.style.display = 'none'; // Initially hidden
 
-    // Toggle interaction
+    // Toggle interaction + welcome message
     wrapper.addEventListener('click', () => {
       const visible = details.style.display === 'block';
       details.style.display = visible ? 'none' : 'block';
+
+      // Show welcome message
+      const userName = this.getAttribute('name') || 'there';
+      alert(`Hello ${userName}, welcome to the team!`);
     });
 
     const style = document.createElement('style');
